@@ -5,8 +5,77 @@
     --blacky : rgb(42, 41, 41) ;
     --whity : rgb(236, 235, 229) ;
 }
+body{
+    background-color: var(--primary);
+}
+
+
+/* font  */
+*{
+    font-family: 'Oswald', sans-serif; 
+}
+h1, h2, h3{
+    font-family: 'Neuton', serif;
+}
 
 
 
+/* text color  */
+.text-primaryC{
+    color: var(--primary);
+}
+.text-secondaryC{
+    color: var(--secondary);
+}
+.text-accentC{
+    color: var(--accent);
+}
+.text-whiteC{
+    color: var(--whity);
+}
+.text-blackC{
+    color: var(--blacky);
+}
 
 
+
+/* bg color  */
+.background-primaryC{
+    background-color: var(--primary);
+}
+
+.background-secondaryC{
+    background-color: var(--secondary);
+}
+
+.background-accentC{
+    background-color: var(--accent);
+}
+
+.background-whiteC{
+    background-color: var(--whity);
+}
+
+.background-blackC{
+    background-color: var(--blacky);
+}
+
+
+.btnCustom{
+    background-color: var(--accent);
+    color: var(--whity);
+    transition: 0.4s;
+}
+.btnCustom:hover{
+    background-color: var(--secondary);
+    color: var(--whity);
+}
+
+
+.logoA{
+    width: 60px;
+}
+#mainNavbar{
+    transition: 0.4s;
+    height: 60px;
+}
