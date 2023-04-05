@@ -1,12 +1,12 @@
 :root{
-    --primary : rgb(235, 220, 96) ;
+    --primary : #DBC18A;
     --secondary : rgb(61, 33, 158) ;
     --accent : rgb(127, 96, 235) ;
     --blacky : rgb(42, 41, 41) ;
     --whity : rgb(236, 235, 229) ;
 }
 body{
-    background-color: var(--primary);
+    background-color: var(--whity);
 }
 
 
@@ -61,6 +61,14 @@ h1, h2, h3{
 }
 
 
+/* navbar  */
+.logoA{
+    width: 60px;
+}
+#mainNavbar{
+    transition: 0.3s;
+}
+
 .btnCustom{
     background-color: var(--accent);
     color: var(--whity);
@@ -70,12 +78,40 @@ h1, h2, h3{
     background-color: var(--secondary);
     color: var(--whity);
 }
+#navIcon{
+    transition: 0.5s;
+}
 
 
-.logoA{
-    width: 60px;
+/* header  */
+.headerCustom{
+
+    background: linear-gradient(312deg, rgba(36, 36, 36, 0.1), rgba(230, 227, 250, 0.6)), url('./media/headerimg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
-#mainNavbar{
-    transition: 0.4s;
-    height: 60px;
+
+
+/* sezione  */
+.increment-numbers{
+    font-size: 60px;
+    font-weight: 900;
 }
+.DOWN{
+    display: none;
+} 
+.RIGHT{
+    display: block;
+} 
+
+@media screen and (max-width: 480px) {
+    .DOWN{
+        display: block;
+    }
+    .RIGHT{
+        display: none;
+    } 
+  }

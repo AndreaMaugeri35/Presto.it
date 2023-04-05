@@ -24,44 +24,79 @@
 
 
 <body>
-
+    <!-- navbar  -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg bg-transparent fixed-top">
         <div class="container-fluid">
             <!-- logo A  -->
             <a class="navbar-brand" href="#" id="logoA">
                 <img class="logoA" src="./media/logopurple.png" alt="logoA">   
-              </a>   
+            </a>   
               <!-- logo B -->    
-              <a class="navbar-brand d-none" href="#" id="logoB">   
+            <a class="navbar-brand d-none" href="#" id="logoB">   
                 <img class="logoA" src="./media/logodarkpurple.png" alt="logoB">    
-              </a>
-
-
-              <button class="navbar-toggler background-accentC" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">            
+            </a>
+            <button class="navbar-toggler background-accentC" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">            
                 <i class="fa-solid fa-hand-pointer fa-rotate-180 fa-2x text-secondaryC" id="navIcon"></i>
-              </button>
-          
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Annunci</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Chi Siamo?</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
-              <button class="btn btnCustom" type="submit">Cerca</button>
-            </form>
-          </div>
+            </button>         
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Annunci</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="#">Chi Siamo?</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Prodotti, servizi, ecc.." aria-label="Search">
+                <button class="btn btnCustom" type="submit">Cerca</button>
+              </form>
+            </div>
         </div>
-      </nav>
+    </nav>
 
 
+    <!-- header -->
+    <header class="container-fluid">
+        <div class="row vh-100 headerCustom align-items-center">
+
+            <div class="col-12 text-center">
+
+                <h1 data-aos="fade-left" class="display-1 fw-bold text-blackC">Presto<span class="text-accentC">.it</span></h1>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- section animazioni  -->
+    <section class="container">
+        <div class="row my-5">
+            <div class="col-12 col-md-6 RIGHT">
+
+                <img class="img-fluid" data-aos="fade-right" data-aos-duration="1500" src="./media/manager.png" alt="corriere kiss">
+
+            </div>
+            <div class="col-12 col-md-6 DOWN">
+
+                <img class="img-fluid" data-aos="fade-down" data-aos-duration="1500" src="./media/managerb.png" alt="corriere kiss">
+
+            </div>
+
+            <div class="col-12 col-md-6">
+
+                <h2 id="h2Test" class="text-center display-3 fw-bold text-secondaryC mt-5">I NOSTRI RISULTATI</h2>
+
+                <p class="lead text-center text-accentC"><span id="first-span" class="increment-numbers d-block text-primaryC">0</span> Clienti World-wide</p>
+                <p class="lead text-center text-accentC"><span id="second-span" class="increment-numbers d-block text-primaryC">0</span> Prodotti e Servizi Venduti</p>
+                <p class="lead text-center text-accentC"><span id="third-span" class="increment-numbers d-block text-primaryC">0</span> Recensioni Positive</p>
+
+            </div>
+        </div>
+    </section>
 
 
 
