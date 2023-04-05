@@ -1,5 +1,5 @@
 :root{
-    --primary : #DBC18A;
+    --primary : #8a483d;
     --secondary : rgb(61, 33, 158) ;
     --accent : rgb(127, 96, 235) ;
     --blacky : rgb(42, 41, 41) ;
@@ -107,7 +107,9 @@ h1, h2, h3{
     display: block;
 } 
 
-@media screen and (max-width: 480px) {
+
+/* media query */
+@media screen and (max-width: 767px) {
     .DOWN{
         display: block;
     }
