@@ -13,7 +13,7 @@ body{
 *{
     font-family: 'Oswald', sans-serif; 
 }
-h1, h2, h3{
+h1, h2, h3 {
     font-family: 'Neuton', serif;
 }
 
@@ -150,4 +150,13 @@ h1, h2, h3{
 }
 .footer-link:hover{
     color: var(--secondary);
+}
+
+
+/* card  */
+.col-custom{
+    transition: 1s;
+}
+.col-custom:hover{
+    transform: scale(1.5);
 }

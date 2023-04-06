@@ -115,12 +115,32 @@
   
 
 
+<article class="container-fluid background-secondaryC mt-5 py-5" >
+    <h2 class="display-3 text-center text-whiteC fw-bold display-3">Spedizioni</h2>
+    <div class="row justify-content-around">
+      <div class="col-12 col-md-3 col-custom my-3  d-flex flex-column align-items-center">
+        <i class="fa-solid fa-truck-fast fa-3x text-accentC"></i>
+        <h2 class="text-whiteC">Lorem Ipsum</h2>
+        <p class="text-accentC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quod!</p>
+      </div>
+      <div class="col-12 col-md-3 col-custom my-3  d-flex flex-column align-items-center">
+        <i class="fa-solid fa-truck-fast fa-3x text-accentC"></i>
+        <h2 class="text-whiteC">Lorem Ipsum</h2>
+        <p class="text-accentC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quod!</p>
+      </div>
+      <div class="col-12 col-md-3 col-custom d-flex flex-column align-items-center my-3">
+        <i class="fa-solid fa-truck-fast fa-3x text-accentC"></i>
+        <h2 class="text-whiteC">Lorem Ipsum</h2>
+        <p class="text-accentC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quod!</p>
+      </div>
+    </div>
+</article>
 
 
 
 
 <!-- footer  -->
-    <footer class="container-fluid mt-5 pt-3 pb-1 background-accentC text-blackC">
+    <footer class="container-fluid pt-3 pb-1 background-accentC text-blackC">
         <div class="container"> 
           <div class="row min-h">  
             <div class="col-12 col-md-4 text-center my-3"> 
@@ -166,6 +186,31 @@
     </script>
 
     <script>
+
+
+
+let camioncini = document.querySelectorAll('.fa-truck-fast');
+
+// cattura delle card
+let columns = document.querySelectorAll('.col-custom');
+
+columns.forEach( (colonna, i)=>{
+
+        colonna.addEventListener('mouseenter', ()=>{
+            camioncini[i].classList.remove('text-accentC');
+            camioncini[i].classList.add('text-whiteC');    
+        })
+        colonna.addEventListener('mouseleave', ()=>{
+            camioncini[i].classList.remove('text-whiteC');
+            camioncini[i].classList.add('text-accentC');
+    })
+});
+
+
+
+
+
+
         let reviews = [
                 {name : 'Valerio', quote : `il sito più bello che abbia mai visto`, vote : 5},
                 {name : 'Nicolae', quote : `il più bello del mondo`, vote : 4},
@@ -205,8 +250,8 @@
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 30,
-      loop: true,
-    //   effect: "flip",
+      loop: false,
+      effect: "flip",
       autoplay: {
         delay: 2000,
         disableOnInteraction: false,
