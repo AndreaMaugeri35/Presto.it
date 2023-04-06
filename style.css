@@ -1,13 +1,14 @@
 :root{
-    --primary : #8a483d;
-    --secondary : rgb(61, 33, 158) ;
-    --accent : rgb(127, 96, 235) ;
+    --primary : #82796F;
+    --secondary :rgb(255, 155, 33);
+    --accent : rgb(35, 104, 138);
     --blacky : rgb(42, 41, 41) ;
     --whity : rgb(236, 235, 229) ;
 }
 body{
-    background-color: var(--whity);
+    background-color: var(--whity);   
 }
+*{overflow-x: hidden;}
 
 
 /* font  */
@@ -72,21 +73,21 @@ h1, h2, h3{
 .btnCustom{
     background-color: var(--accent);
     color: var(--whity);
-    transition: 0.4s;
+    transition: 0.3s;
 }
 .btnCustom:hover{
     background-color: var(--secondary);
     color: var(--whity);
 }
 #navIcon{
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 
 /* header  */
 .headerCustom{
 
-    background: linear-gradient(312deg, rgba(36, 36, 36, 0.1), rgba(230, 227, 250, 0.6)), url('./media/headerimg.jpg');
+    background: linear-gradient(312deg, rgba(36, 36, 36, 0.1), rgba(230, 227, 250, 0.3)), url('./media/headerimg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

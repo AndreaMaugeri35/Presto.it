@@ -1,15 +1,15 @@
-// cattura icona mano navbar
+//cattura icona mano navbar
 let navIcon = document.querySelector('#navIcon');
 navIcon.addEventListener('click', ()=>{
         navIcon.classList.toggle('fa-rotate-180');
 })
 
 
-// cattura navbar
+//navbar
 let mainNavbar = document.querySelector('#mainNavbar');
 let logoA = document.querySelector('#logoA');
 let logoB = document.querySelector('#logoB');
-// evento NAVBAR
+
 window.addEventListener('scroll', ()=>{
     if(window.scrollY > 0){
         mainNavbar.classList.remove('bg-transparent');
@@ -26,7 +26,6 @@ window.addEventListener('scroll', ()=>{
 
 
 // CHIAMATA ASINCRONA DI JAVASCRIPT
-
 function createInterval(finalNumber, element){
     let counter = 0;
     let interval = setInterval( ()=>{
@@ -41,14 +40,12 @@ function createInterval(finalNumber, element){
 
 createInterval();
 
-// cattura degli span con numero 0
-
+//cattura degli span con numero 0
 let firstSpan = document.querySelector('#first-span');
 let secondSpan = document.querySelector('#second-span');
 let thirdSpan = document.querySelector('#third-span');
 
 let h2Test = document.querySelector('#h2Test');
-
 // variabile d'appoggio per cessare l'incremento dei numeri
 let intersectionCheck = true;
 // funzione intersection observe
