@@ -13,11 +13,11 @@ let logoB = document.querySelector('#logoB');
 window.addEventListener('scroll', ()=>{
     if(window.scrollY > 0){
         mainNavbar.classList.remove('bg-transparent');
-        mainNavbar.classList.add('background-whiteC');
+        mainNavbar.classList.add('background-primaryC');
         logoB.classList.remove('d-none');
         logoA.classList.add('d-none');
     } else {
-        mainNavbar.classList.remove('background-whiteC');
+        mainNavbar.classList.remove('background-primaryC');
         mainNavbar.classList.add('bg-transparent');
         logoA.classList.remove('d-none');
         logoB.classList.add('d-none');

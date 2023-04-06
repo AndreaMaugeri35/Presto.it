@@ -9,6 +9,7 @@
    
    
     <!-- cdn varie -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,10 +29,10 @@
     <nav id="mainNavbar" class="navbar navbar-expand-lg bg-transparent fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#" id="logoA">
-                <img class="logoA" src="./media/logoorange.png" alt="logoA">   
+                <img class="logoA" src="./media/logoblue.png" alt="logoA">   
             </a>       
             <a class="navbar-brand d-none" href="#" id="logoB">   
-                <img class="logoA" src="./media/logoblue.png" alt="logoB">    
+                <img class="logoA" src="./media/logoorange.png" alt="logoB">    
             </a>
             <button class="navbar-toggler background-accentC" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">            
                 <i class="fa-solid fa-hand-pointer fa-rotate-180 fa-2x text-secondaryC" id="navIcon"></i>
@@ -60,10 +61,19 @@
     <!-- header -->
     <header class="container-fluid">
         <div class="row vh-100 headerCustom align-items-center">
-            <div class="col-12 text-center">
-                <h1 data-aos="fade-left" class="display-1 fw-bold text-secondaryC">Presto<span class="text-accentC">.it</span></h1>
-                <h2 data-aos="fade-left" class="display-3 fw-bold text-accentC mt-5">Presto?<span class="text-secondaryC display-1">Fatto!</span></h2>                 
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 text-end">
+                            <h1 data-aos="fade-right" class="display-1 fw-bold text-whiteC background-secondaryC">Presto<span class="text-accentC">.it</span></h1>
+                        </div>
+                        <div class="col-12 col-md-6 py-5">
+                            <h2 data-aos="fade-left" class="display-1 fw-bold text-secondaryC mt-5 background-accentC">Presto?<span class="text-whiteC display-1">Fatto!</span></h2>                 
+                        </div>
+                    </div>
+                </div>
             </div>
+           
         </div>
     </header>
 
@@ -86,8 +96,66 @@
         </div>
     </section>
 
+    <!-- swiper  -->
+<section class="container">
+    <div class="row">
+        <div class="col-12"><h2 class="text-center display-3 fw-bold text-accentC my-5">LE NOSTRE VALUTAZIONI</h2></div>
+        <div class="col-12 col-md-6">
+            <p class="text-center display-3 fw-bold text-secondaryC display-6">Potremmo dirti di essere i migliori..</p>
+            <p class="text-center display-3 fw-bold text-accentC display-6">Ma lasciamo che siano i nostri clienti a farlo!</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+  
+
+
+
+
+
+
+<!-- footer  -->
+    <footer class="container-fluid mt-5 pt-3 pb-1 background-accentC text-blackC">
+        <div class="container"> 
+          <div class="row min-h">  
+            <div class="col-12 col-md-4 text-center my-3"> 
+              <h2 class="text-secondaryC">About Presto</h2>
+              <p class="text-primaryC">P.IVA: 1234567</p>
+              <p class="text-primaryC">Indirizzo: Via Le Mani Dagliocchi</p>
+              <p class="text-primaryC">Tel: +39 3455665433</p>
+              <p class="text-primaryC">e-mail: miamail@miamail.it</p>
+              <div class="d-flex justify-content-center"> 
+                <i class="fa-brands fa-facebook fa-1x"></i>
+                <i class="fa-brands fa-instagram mx-3 fa-1x"></i>
+                <i class="fa-brands fa-linkedin fa-1x"></i> 
+              </div>
+            </div>
+            <div class="col-12 col-md-4 text-center my-3"> 
+              <h2 class="text-secondaryC">Quick Menu</h2>
+              <a href="#animate" class="footer-link"><p>Un pò di numeri</p></a>
+              <a href="#aboutUs" class="footer-link"><p>Recensioni</p></a>
+              <a href="#mouseEnter" class="footer-link"><p>Spedizioni</p></a>            
+            </div>
+            <div class="col-12 col-md-4 text-center mt-3">  
+              <h2 class="text-secondaryC">Collaborazioni</h2>
+              <p class="text-primaryC">Aulab</p>
+              <p class="text-primaryC">Bartolini</p>
+              <p class="text-primaryC">Amazon</p>
+              <p class="text-primaryC">Disney</p>            
+            </div>  
+          </div>  
+        </div>  
+      </footer>
+
+
 
 <!-- vari script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 
@@ -95,6 +163,55 @@
 
     <script>
         AOS.init();
+    </script>
+
+    <script>
+        let reviews = [
+                {name : 'Valerio', quote : `il sito più bello che abbia mai visto`, vote : 5},
+                {name : 'Nicolae', quote : `il più bello del mondo`, vote : 4},
+                {name : 'Simone', quote : `Scope rapide, palette pessime`, vote : 3},
+                {name : 'Andrea', quote : `Gardevoir è troppo bello`, vote : 5},
+        ];
+                let swiperWrapper = document.querySelector('.swiper-wrapper');
+                reviews.forEach( (recensione)=>{
+                    let div = document.createElement('div');
+                    div.classList.add('swiper-slide');
+                    div.innerHTML = `
+                            <div class="card-custom">
+                                <h3 class="text-secondaryC">${recensione.name}</h3>
+                                <p class="text-center p-2 text-accentC">${recensione.quote}</p>
+                                <div>
+                                    <p class="text-center p-2 text-accentC">${createStars(recensione.vote)}</p>
+                                </div>
+                            </div>
+                    `;
+                    swiperWrapper.appendChild(div);
+                })
+                function createStars(fullStars){
+                let final = '';
+                for(let i = 1; i <=5; i++){
+                if(fullStars >= i){
+                final += `<i class="fa-solid fa-star"></i>`;
+                } else {
+                final += `<i class="fa-regular fa-star"></i>`;
+                }
+                }
+                return final;
+                }
+
+
+
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+    //   effect: "flip",
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+    });
     </script>
 
     <script src="./main.js"></script>
