@@ -160,3 +160,6 @@ h1, h2, h3 {
 .col-custom:hover{
     transform: scale(1.5);
 }
+section{
+    overflow-x: hidden;
+}

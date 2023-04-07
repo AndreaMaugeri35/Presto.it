@@ -59,7 +59,7 @@
 
 
     <!-- header -->
-    <header class="container-fluid">
+    <header class="container-fluid" id="titolo">
         <div class="row vh-100 headerCustom align-items-center">
             <div class="col-12">
                 <div class="container">
@@ -78,8 +78,27 @@
     </header>
 
 
+    <!-- ssezione chi siamo  -->
+
+    <section class="container-fluid" id="aboutUs">
+      <div class="row justify-content-center">
+          <div class="col-12">
+            <h2 data-aos="fade-right" data-aos-duration="2000" class=" display-1 fw-bold text-accentC text-center">IL TUO BUSINESS</h2>
+            <h2 data-aos="fade-left" data-aos-duration="2000" class=" display-1 fw-bold text-secondaryC text-center">I NOSTRI MEZZI</h2>
+          </div>
+          <div class="col-12 col-md-4 mt-5 d-flex flex-column justify-content-center">
+            <h3 class="text-accentC display-3">Chi siamo?</h3>
+            <p class="text-accentC display-6">Presto.it è una società italiana, che nasce dall'esigenza di organizzare, gestire, e ordine un proprio esercizio, in maniera facile e veloce. In poche parole: 
+              <p class="text-secondaryC display-4 fw-bold">PRESTO</p></p>
+          </div>
+          <div class="col-12 col-md-4 mt-5">
+            <img data-aos="zoom-in" data-aos-duration="1500" class="w-100" src="./media/headerimg.jpg" alt="">
+          </div>
+      </div>
+    </section>
+
     <!-- section animazioni  -->
-    <section class="container">
+    <section class="container" id="risultati">
         <div class="row my-5">
             <div class="col-12 col-md-6 RIGHT">
                 <img class="img-fluid" data-aos="fade-right" data-aos-duration="1500" src="./media/manager.png" alt="pointing right">
@@ -87,7 +106,7 @@
             <div class="col-12 col-md-6 DOWN">
                 <img class="img-fluid" data-aos="fade-down" data-aos-duration="1500" src="./media/managerb.png" alt="looking down">
             </div>
-            <div class="col-12 col-md-6">
+            <div data-aos="fade-left" class="col-12 col-md-6">
                 <h2 id="h2Test" class="text-center display-3 fw-bold text-accentC mt-5">I NOSTRI RISULTATI</h2>
                 <p class="lead text-center text-accentC"><span id="first-span" class="increment-numbers d-block text-secondaryC">0</span> Clienti World-wide</p>
                 <p class="lead text-center text-accentC"><span id="second-span" class="increment-numbers d-block text-secondaryC">0</span> Prodotti e Servizi Venduti</p>
@@ -97,7 +116,7 @@
     </section>
 
     <!-- swiper  -->
-<section class="container">
+<section data-aos="zoom-in" class="container">
     <div class="row">
         <div class="col-12"><h2 class="text-center display-3 fw-bold text-accentC my-5">LE NOSTRE VALUTAZIONI</h2></div>
         <div class="col-12 col-md-6">
@@ -114,8 +133,9 @@
 </section>
   
 
+<!-- Spedizioni  -->
 
-<article class="container-fluid background-secondaryC mt-5 py-5" >
+<section class="container-fluid background-secondaryC mt-5 py-5">
     <h2 class="display-3 text-center text-whiteC fw-bold display-3">Spedizioni</h2>
     <div class="row justify-content-around">
       <div class="col-12 col-md-3 col-custom my-3  d-flex flex-column align-items-center">
@@ -134,7 +154,7 @@
         <p class="text-accentC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quod!</p>
       </div>
     </div>
-</article>
+</section>
 
 
 
@@ -157,9 +177,9 @@
             </div>
             <div class="col-12 col-md-4 text-center my-3"> 
               <h2 class="text-secondaryC">Quick Menu</h2>
-              <a href="#animate" class="footer-link"><p>Un pò di numeri</p></a>
-              <a href="#aboutUs" class="footer-link"><p>Recensioni</p></a>
-              <a href="#mouseEnter" class="footer-link"><p>Spedizioni</p></a>            
+              <a href="#risultati" class="footer-link"><p>I nostri risultati</p></a>
+              <a href="#aboutUs" class="footer-link"><p>Chi siamo</p></a>
+              <a href="#titolo" class="footer-link"><p>Titolo</p></a>            
             </div>
             <div class="col-12 col-md-4 text-center mt-3">  
               <h2 class="text-secondaryC">Collaborazioni</h2>
@@ -236,9 +256,9 @@ columns.forEach( (colonna, i)=>{
                 let final = '';
                 for(let i = 1; i <=5; i++){
                 if(fullStars >= i){
-                final += `<i class="fa-solid fa-star"></i>`;
+                final += `<i class="fa-solid fa-star text-secondaryC"></i>`;
                 } else {
-                final += `<i class="fa-regular fa-star"></i>`;
+                final += `<i class="fa-regular fa-star text-secondaryC"></i>`;
                 }
                 }
                 return final;
