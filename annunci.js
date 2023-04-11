@@ -66,8 +66,8 @@ fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
     function showCards(array){    
         // svuotamento wrapper
         cardsWrapper.innerHTML = '';    
-        // metto le card in ordine crescente        
-        array.sort((a, b) => Number(a.price - b.price));      
+        // metto le card in ordine decrescente        
+        array.sort((a, b) => Number(b.price - a.price));      
         array.forEach( (element)=>{       
             let div = document.createElement('div');   
             div.classList.add('col-12' , 'col-md-4' , 'col-lg-3' , 'my-5');    

@@ -75,7 +75,7 @@
         "id": 10,
         "name": "Ford Puma",
         "category": "Motori",
-        "price": "25000.02",
+        "price": "23000.02",
         "image" : "./media/utile.png"
     },
 
@@ -91,7 +91,7 @@
         "id": 12,
         "name": "Trilocale",
         "category": "Immobili",
-        "price": "55000.54",
+        "price": "31000.54",
         "image" : "./media/utile.png"
     },
 
@@ -139,7 +139,7 @@
         "id": 18,
         "name": "Ducati Monster",
         "category": "Motori",
-        "price": "12000.13",
+        "price": "17000.13",
         "image" : "./media/utile.png"
     },
     
