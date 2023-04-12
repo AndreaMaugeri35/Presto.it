@@ -24,124 +24,253 @@ window.addEventListener('scroll', ()=>{
     }
 })
 
-// fetch 
 fetch('./annunci.json').then( (response)=> response.json() ).then( (data)=> {
 
-    // cattura wrapper radio buttons    
+    // cattura wrapper radio buttons
+    
     let categoryWrapper = document.querySelector('#categoryWrapper');
     
-    // cattura wrapper delle cards annunci   
+    // cattura wrapper delle cards annunci
+    
     let cardsWrapper = document.querySelector('#cardsWrapper');
     
     
-    // funzione che crea i radio buttons  
-    function setCategoryFilters(){   
+    // funzione che crea i radio buttons
+    
+    function setCategoryFilters(){
+    
     let categories = data.map( (annuncio)=> annuncio.category );
     
-    // ho bisogno di un array con le categorie che non si ripetono, quindi.   
+    // ho bisogno di un array con le categorie che non si ripetono, quindi.
+    
     let uniqueCategories = [];
     
     categories.forEach( (category)=>{
     
-        if( !uniqueCategories.includes(category)){    
-            uniqueCategories.push(category)    
-            } 
+        if( !uniqueCategories.includes(category)){
+    
+            uniqueCategories.push(category)
+    
+            }
+    
+    
         } )
-        uniqueCategories.forEach( (category)=>{    
-            let div = document.createElement('div');    
-            div.classList.add('form-check');    
-            div.innerHTML = `            
+    
+    
+        uniqueCategories.forEach( (category)=>{
+    
+    
+            let div = document.createElement('div');
+    
+            div.classList.add('form-check');
+    
+            div.innerHTML = `
+            
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="${category}">
                         <label class="form-check-label" for="${category}">
                         ${category}
-                        </label>                   
-            `;     
-            categoryWrapper.appendChild(div); 
+                        </label>        
+            
+            `;
+    
+    
+            categoryWrapper.appendChild(div);
+    
+    
+    
             } )
+    
+    
+    
         }
- 
+    
     setCategoryFilters();
-       
-    // funzione mostra cards   
-    function showCards(array){    
-        // svuotamento wrapper
-        cardsWrapper.innerHTML = '';    
-        // metto le card in ordine decrescente        
-        array.sort((a, b) => Number(b.price - a.price));      
-        array.forEach( (element)=>{       
-            let div = document.createElement('div');   
-            div.classList.add('col-12' , 'col-md-4' , 'col-lg-3' , 'my-5');    
-            div.innerHTML = `            
-                            <div class="announcement-card p-3 text-secondaryC text-center">
-                                <div>
-                                    <p class="h3 text-primaryC my-2">${element.name}</p>
-                                    <h3>${element.category}</h3>
-                                    </div>    
-                                    <img class = "w-75 background-primaryC" src="${element.image}" alt="">
-                                <h3>${element.price} €</h3>                               
-                            </div>          
-            `;   
     
-            cardsWrapper.appendChild(div);       
-        } )   
-        }    
-        showCards(data);
-     
-        // funzione filtra per categoria, mostra cards (al click sul radio button)   
-        function filterbyCategory(categoria){   
-            if(categoria != 'All'){  
-                let filtered = data.filter( (annuncio)=> annuncio.category == categoria ); 
-                showCards(filtered);
-            } else {
-                showCards(data);
-            }
+    
+    // funzione mostra cards
+    
+    function showCards(array){
+    
+        // svuotamento wrapper
+        cardsWrapper.innerHTML = '';
+    
+        // metto le card in ordine decrescente
+        
+        array.sort((a, b) => Number(b.price - a.price));
+    
+    
+        array.forEach( (element, i)=>{
+    
+    
+            let div = document.createElement('div');
+    
+            div.classList.add('col-12' , 'col-md-3' , 'my-5');
+    
+            div.innerHTML = `
+            
+                            <div class="announcement-card text-center">
+                                <img class="img-card-custom" src="${element.image}" alt="">
+                                <div
+                                <p class="h3 text-secondaryC">${element.name}</p>
+                                <h3 class="text-primaryC">${element.category}</h3>
+                                <h3 class="text-primaryC">${element.price} €</h3>
+                                </div>
+                            </div>
+            
+            `;
+    
+    
+            cardsWrapper.appendChild(div);
+    
+    
+    
+        } )
+    
         }
     
-        // cattura radio buttons 
+        showCards(data);
+    
+    
+        // funzione filtra per categoria, mostra cards (al click sul radio button)
+    
+        function filterByCategory(array){
+    
+    
+            // trasformiamo la node list in un array, sfruttando il papà di tutti gli array che si chiama Array e il suo metodo .from() che mi trasforma una nodelist (in questo caso specifico) in un array
+    
+            // dopo di che uso il metodo .find() che mi serve per trovare un solo elemento che rispetti una condizione che io pongo.
+    
+            // infine mi prendo l'id del bottone che userò come categoria
+    
+            // let categoria = Array.from(checkInputs).find( (button)=> button.checked).id;
+    
+            let arrayFromNodelist = Array.from(checkInputs);
+    
+            let button = arrayFromNodelist.find((bottone)=> bottone.checked);
+    
+            let categoria = button.id;
+    
+            // console.log(categoria);
+    
+    
+            if(categoria != 'All'){
+    
+                let filtered = array.filter( (annuncio)=> annuncio.category == categoria );
+    
+                return filtered;
+    
+            } else {
+    
+                return data;
+    
+            }
+    
+            
+    
+        }
+    
+            // cattura radio buttons
+    
         let checkInputs = document.querySelectorAll('.form-check-input')
+    
         checkInputs.forEach( (checkInput)=>{
+    
+    
             checkInput.addEventListener('click', ()=>{
-                filterbyCategory(checkInput.id);
+    
+                globalFilter();
+    
             })
+    
+    
         })
     
+    
         // cattura range input and number
+    
         let inputPrice = document.querySelector('#inputPrice');
+    
         let incrementNumber = document.querySelector('#incrementNumber');
     
         // funzione settaggio valore input price massimo
-        function setInputPrice(){ 
+    
+        function setInputPrice(){
+    
             let prices = data.map( (annuncio)=> Number(annuncio.price) );
+    
             let maxPrice = Math.max(...prices);
+    
             inputPrice.max = Math.ceil(maxPrice);
+    
             inputPrice.value = Math.ceil(maxPrice);
+    
             incrementNumber.innerHTML = Math.ceil(maxPrice);
+    
+    
         }
+    
         setInputPrice();
     
-        // funzione che filtra per prezzo  
-        function filterbyPrice(prezzo){
-            let filtered = data.filter( (annuncio)=> annuncio.price <= Math.ceil(prezzo) );        
-            showCards(filtered);
+        // funzione che filtra per prezzo
+    
+        function filterByPrice(array){
+    
+            let filtered = array.filter( (annuncio)=> annuncio.price <= +(inputPrice.value) );   
+    
+            console.log(filtered);
+    
+            return filtered;
+    
         }
     
-        //  evento al cambio dell'input range 
+        //  evento al cambio dell'input range
+    
         inputPrice.addEventListener('input', ()=>{
-            filterbyPrice(inputPrice.value);
+    
             incrementNumber.innerHTML = inputPrice.value;
+    
+            globalFilter();
+            
         } )
     
-        // cattura word input per filtro per parola 
+        // cattura word input per filtro per parola
+    
         let wordInput = document.querySelector('#wordInput');
     
         // funzione filtra per parola
-        function filterbyWord(nome){
-            let filtered = data.filter ( (annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()) );
-            showCards(filtered);
+    
+        function filterByWord(array){
+    
+            let nome = wordInput.value;
+        
+    
+            let filtered = array.filter ( (annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()) );
+    
+            return filtered;
+    
         }
     
         // evento digitazione parola sull'input
+       
         wordInput.addEventListener('input', ()=>{
-            filterbyWord(wordInput.value);
+    
+            globalFilter();
+    
         })
-    } )
+    
+    
+        // filtro dei filtri, funzione globale
+    
+        function globalFilter(){
+        
+            let filteredByCategory = filterByCategory(data);
+        
+            let filteredByPrice = filterByPrice(filteredByCategory);
+        
+            let filteredByWord = filterByWord(filteredByPrice);
+        
+            showCards(filteredByWord);
+        
+        
+        }
+    })
